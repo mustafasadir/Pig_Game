@@ -3,4 +3,10 @@ print("I hope this goes to the master branch!")
 
 print(  " Here is a new line")
 
-print("Here is Kristoffers first commit")
+
+
+<<<<<<< HEAD
+print("Here is Kristoffers first commit") #Commit
+=======
+print("this is the commit with vs code")
+>>>>>>> 2300e51a87c1d28600289198037976f6b8084e5e
