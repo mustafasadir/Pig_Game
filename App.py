@@ -4,7 +4,7 @@ print("I hope this goes to the master branch!")
 print(  " Here is a new line")
 
 
-
+print("H")
 <<<<<<< HEAD
 print("Here is Kristoffers first commit") #Commit
 =======
