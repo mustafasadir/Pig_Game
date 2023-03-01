@@ -6,6 +6,8 @@ class Difficulty(Enum):
     HARD = 3
 
 class Game:
+    
+
     def __init__(self):
         self.difficulty = [Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD]
         self.instruction = "This is the game instruction"

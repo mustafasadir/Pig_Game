@@ -1,10 +1,9 @@
-
-
+from Score import Score
 
 class Player:
     def __init__(self, name):
         self.__name = name
-        score = None #type Score
+        self.score = Score() #type Score
 
 
     def getName(self):
