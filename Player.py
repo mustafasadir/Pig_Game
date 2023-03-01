@@ -1,12 +1,11 @@
 from Score import Score
 
+
 class Player:
+
     def __init__(self, name):
         self.__name = name
-        self.score = Score() #type Score
+        self.score = Score()  # Creates an Score object for every Player object
 
-
-    def getName(self):
+    def _getName(self):
         return self.__name
-    
-    
