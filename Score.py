@@ -1,4 +1,4 @@
-#from GameState import GameState
+from GameState import GameState
 
 
 class Score:
@@ -20,5 +20,5 @@ class Score:
             score.resetScoreObject()
         
 
-    #def addScoreToState(state : GameState):
-   #     pass
+    def addScoreToState(state : GameState):
+        pass
