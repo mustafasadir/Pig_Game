@@ -19,6 +19,5 @@ class Score:
         for score in score_list:
             score.resetScoreObject()
         
-
     def addScoreToState(state : GameState):
-        pass
+        
