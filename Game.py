@@ -1,5 +1,6 @@
 from enum import Enum
 from random import randint
+from Player import Player
 import sys
 
 
@@ -26,6 +27,10 @@ class Game:
         ends and that player is the winner.
         '''    
 
+
+    def play_Game():
+        alias = input("Player 1, please choose an alias:")
+        player1 = 
 
 
     def quit_Game():
@@ -57,3 +62,4 @@ class Game:
 if __name__ == "__main__":
     print("\t\tWelcome to Pig Game!\n")
     print(Game().instruction)
+    
