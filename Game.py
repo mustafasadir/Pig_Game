@@ -49,8 +49,11 @@ class Game:
         return dice1, dice2
     
     def playGame(self):
-        print("Welcome to Pig Game!\n\nThe instructions of the game are simple, blab blab bla\n")
-        num_players = int(input("How many players? "))
+        print("\nWelcome to Pig Game!\n\nThe instructions of the game are simple,you will take turns rolling two six-sided dies. ")
+        print("If you roll a 1, your turn ends and you lose all your points for that round.")
+        print("If you roll a 2-6, you can choose to roll again or hold your score.")
+        print("The first player to reach 100 points wins the game.\n")
+        num_players = int(input("How many players are you? "))
         players = []
         for i in range(num_players):
             player_name = input(f"Enter name for player {i+1}: ")
@@ -91,6 +94,7 @@ class Game:
                         self.game_state.highScoreList[players[current_player_index]] = players[current_player_index].score # Update the high score list
                         self.printScore()
                         #No break statement, the game will keep running until the player manually quits
+                        
 
             else:
                 print("Turn is over, no points earned.")
