@@ -36,9 +36,11 @@ class Game:
         
 
     def printScore(self):
-        high_scores = sorted(self.game_state.highScoreList.items(), key=lambda x: x[1].getCurrentScore(), reverse=True)
-        for player, score in high_scores:
+        print("High Score:")
+        for player, score in self.game_state.highScoreList.items():
             print(f"{player._getName()}: {score.getCurrentScore()}")
+            
+        
 
     def throwDice(self):
         # for loop 1 to 6 that returns int
@@ -64,6 +66,7 @@ class Game:
                 dice1, dice2 = self.setCheatMode()
                 points = dice1 + dice2
                 players[current_player_index].score.setCurrentScore(points)
+                
             elif choice == "q":
                 self.quitGame()
             elif choice == "y":
@@ -86,8 +89,8 @@ class Game:
                         print(f"{players[current_player_index]._getName()} won the game!")
                         players[current_player_index].score.setCurrentScore(points) # Add the final points earned in the last round to the score
                         self.game_state.highScoreList[players[current_player_index]] = players[current_player_index].score # Update the high score list
-                        self.printScore() # Print the final high score list
-                        break
+                        self.printScore()
+                        #No break statement, the game will keep running until the player manually quits
 
             else:
                 print("Turn is over, no points earned.")
