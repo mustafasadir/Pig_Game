@@ -13,7 +13,7 @@ class Game:
         self.difficulty = [Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD]
         self.game_state = GameState()
         
-    def quitGame():
+    def quitGame(self):
         # implementation for quitting the game
         exit()
 
@@ -58,12 +58,14 @@ class Game:
         while True:
             print(f"\n\n{players[current_player_index]._getName()}'s turn!")
             print("Current Score:", players[current_player_index].score.getCurrentScore())
-            print("To active cheat enter C")
+            print("To active cheat enter C \nTo quit the game enter Q")
             choice = input("Do you want to roll the dice? (y/n)").lower()
             if choice == "c":
                 dice1, dice2 = self.setCheatMode()
                 points = dice1 + dice2
                 players[current_player_index].score.setCurrentScore(points)
+            elif choice == "q":
+                self.quitGame()
             elif choice == "y":
                 dice1, dice2 = self.throwDice()
                 print(f"You rolled {dice1} and {dice2}.")
