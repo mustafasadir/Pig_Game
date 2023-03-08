@@ -25,6 +25,9 @@ class Game:
 
     def setCheatMode(self):
         self.game_state.isCheatMode = True
+        dice1 = int(input("Enter the desired value for dice 1: "))
+        dice2 = int(input("Enter the desired value for dice 2: "))
+        return dice1, dice2
 
     def setDifficulty(self, game_state):
         # implementation for setting the game difficulty based on the game state
@@ -55,10 +58,13 @@ class Game:
         while True:
             print(f"\n\n{players[current_player_index]._getName()}'s turn!")
             print("Current Score:", players[current_player_index].score.getCurrentScore())
-
+            print("To active cheat enter C")
             choice = input("Do you want to roll the dice? (y/n)").lower()
-
-            if choice == "y":
+            if choice == "c":
+                dice1, dice2 = self.setCheatMode()
+                points = dice1 + dice2
+                players[current_player_index].score.setCurrentScore(points)
+            elif choice == "y":
                 dice1, dice2 = self.throwDice()
                 print(f"You rolled {dice1} and {dice2}.")
 
@@ -66,6 +72,8 @@ class Game:
                 if dice1 == 1 or dice2 == 1:
                     print("You rolled a 1! Turn is over, no points earned.")
                     players[current_player_index].score.resetScoreObject()
+                    current_player_index = (current_player_index + 1) % len(players)  # Switches over to the other player
+                    
 
                 else:
                     points = dice1 + dice2
