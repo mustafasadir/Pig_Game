@@ -1,24 +1,17 @@
 
-
-
 class Score:
-
     def __init__(self):
-        self.__currentScore = 0
+        self.__current_score = 0
 
-    def getCurrentScore(self):  # Gets the current score
-        return self.__currentScore
+    def get_current_score(self):  # Gets the current score
+        return self.__current_score
 
-    def setCurrentScore(self, points):  # Sets the current score
-        self.__currentScore += points
+    def set_current_score(self, points):  # Sets the current score
+        self.__current_score += points
 
-    def resetScoreObject(self):  # Resets the score for the Score object
-        self.__currentScore = 0
+    def reset_score_object(self):  # Resets the score for the Score object
+        self.__current_score = 0
 
-    def resetScoreList(self, score_list):  # Resets the score for the list
+    def reset_score_list(self, score_list):  # Resets the score for the list
         for score in score_list:
-            score.resetScoreObject()
-        
-
-    #def addScoreToState(state : GameState):
-        #pass
+            score.reset_score_object()
