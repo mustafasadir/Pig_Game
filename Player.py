@@ -7,8 +7,10 @@ class Player:
         self.name = name
         self.score = Score()  # Creates a Score object for every Player object
 
-    def _getName(self):
+    def _get_name(self):
         return self.name
     
-    def changeName(self, new_name):
+    def change_name(self, new_name):
         self.name = new_name
+
+
