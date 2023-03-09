@@ -21,6 +21,15 @@ class testGame(unittest.TestCase):
         self.game.setCheatMode = lambda: (4, 2)
         result = self.game.setCheatMode()
         self.assertEqual(result, (4, 2))
+    
+    def throw_dice(self):  # Makes sure the dies are between 1 and 6
+        game = Game()
+        for i in range(10):
+            dice1, dice2 = game.throw_dice()
+            self.assertGreaterEqual(dice1, 1)
+            self.assertLessEqual(dice1, 6)
+            self.assertGreaterEqual(dice2, 1)
+            self.assertLessEqual(dice2, 6)
 
 
 if __name__ == '__main__':
