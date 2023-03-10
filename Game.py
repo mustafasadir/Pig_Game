@@ -11,14 +11,24 @@ class Game:
         self.game_state = GameState()
 
     def quit_game(self):
+        '''
+        for quitting the game
+        '''
         exit()
 
     def reset_game(self):
+        '''
+        Resets the score for the players. Turns off cheat mode
+        '''
+
         for player in self.game_state.score_list:
             player.score.reset_score_object()
         self.game_state.is_cheat_mode = False
 
     def set_cheat_mode(self):
+        '''
+        Turns on cheat mode. The player can choose what value the dies should have
+        '''
         self.game_state.is_cheat_mode = True
         dice1 = int(input("Enter the desired value for dice 1: "))
         dice2 = int(input("Enter the desired value for dice 2: "))
@@ -30,17 +40,25 @@ class Game:
         game_state.difficulty = difficulty
 
     def print_score(self):
+        '''
+        Prints the high score at the end of the game
+        '''
         print("High Score:")
         for player, score in self.game_state.score_list.items():
             print(f"{player._get_name()}: {score.get_current_score()}")
 
     def throw_dice(self):
-        # for loop 1 to 6 that returns int
+        '''
+        for loop 1 to 6 that returns int
+        '''
         dice1 = randint(1, 6)
         dice2 = randint(1, 6)
         return dice1, dice2
 
     def play_game(self):
+        '''
+        The game function. This is our "main" and it is here the player plays the game
+        '''
         print("\nWelcome to Pig Game!\n\nThe instructions of the game are simple,you will take turns rolling two six-sided dies. ")
         print("If you roll a 1, your turn ends and you lose all your points.")
         print("If you roll a 2-6, you can choose to roll again or hold your score.")

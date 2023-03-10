@@ -2,10 +2,13 @@ from Score import Score
 
 
 class Player:
+    '''
+    This class lets the player choose a name and creates a Score object for every Player object
+    '''
 
     def __init__(self, name):
         self.name = name
-        self.score = Score()  # Creates a Score object for every Player object
+        self.score = Score() 
 
     def _get_name(self):
         return self.name
