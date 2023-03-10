@@ -24,7 +24,7 @@ class Game:
         for player in self.game_state.score_list:
             player.score.reset_score_object()
         self.game_state.is_cheat_mode = False
-        
+
     def set_cheat_mode(self):
         '''
         Turns on cheat mode. The player can choose what value the dies should have
