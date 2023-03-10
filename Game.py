@@ -1,7 +1,6 @@
 from random import randint
 from Score import Score
 from Player import Player
-from Difficulty import Difficulty
 from GameState import GameState
 
 
@@ -10,7 +9,6 @@ class Game:
     From this class the game is being played
     '''
     def __init__(self):
-        self.difficulty = [Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD]
         self.game_state = GameState()
 
     def quit_game(self):
@@ -23,11 +21,10 @@ class Game:
         '''
         Resets the score for the players. Turns off cheat mode
         '''
-
         for player in self.game_state.score_list:
             player.score.reset_score_object()
         self.game_state.is_cheat_mode = False
-
+        
     def set_cheat_mode(self):
         '''
         Turns on cheat mode. The player can choose what value the dies should have
@@ -36,11 +33,6 @@ class Game:
         dice1 = int(input("Enter the desired value for dice 1: "))
         dice2 = int(input("Enter the desired value for dice 2: "))
         return dice1, dice2
-
-    def set_difficulty(self, game_state):
-        # implementation for setting the game difficulty based on the game state
-        #  should return an ENUM value representing
-        game_state.difficulty = difficulty
 
     def print_score(self):
         '''

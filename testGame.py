@@ -29,7 +29,7 @@ class testGame(unittest.TestCase):
         self.game.setCheatMode = lambda: (4, 2)
         result = self.game.setCheatMode()
         self.assertEqual(result, (4, 2))
-
+    
     def test_throw_dice(self):
         '''
         Tests the throw dice
