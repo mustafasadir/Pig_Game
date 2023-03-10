@@ -3,7 +3,7 @@ How to start the game:
 1. Navigate to a directory where you want to clone our repository
 2. git clone https://github.com/mustafasadir/Pig_Game.git
 3. Download the requirements.txt
-4. To play the game: python Game.py  
+4. To play the game enter in the terminal: python Game.py  
 
 How to get the code coverage: 
 1.	First do the following in the terminal: Pip install coverage
