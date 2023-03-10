@@ -11,7 +11,3 @@ class Score:
 
     def reset_score_object(self):  # Resets the score for the Score object
         self.__current_score = 0
-
-    def reset_score_list(self, score_list):  # Resets the score for the list
-        for score in score_list:
-            score.reset_score_object()
