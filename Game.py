@@ -6,6 +6,9 @@ from GameState import GameState
 
 
 class Game:
+    '''
+    From this class the game is being played
+    '''
     def __init__(self):
         self.difficulty = [Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD]
         self.game_state = GameState()
