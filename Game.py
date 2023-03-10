@@ -1,5 +1,4 @@
 from random import randint
-from Score import Score
 from Player import Player
 from GameState import GameState
 
