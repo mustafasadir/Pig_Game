@@ -65,42 +65,44 @@ class Game:
             players.append(Player(player_name))
 
         current_player_index = 0
+        '''
+        The menu that we will always come back to
+        '''
         while True:
             print(f"\n\n{players[current_player_index]._get_name()}'s turn!")
             print("Current Score:", players[current_player_index].score.get_current_score())
             print("To activate cheat enter C \nTo quit the game enter Q\nTo switch name enter S")
             choice = input("Do you want to roll the dices? (y/n)").lower()
-            if choice == "c":
+            if choice == "c":   # activate cheatmode
                 dice1, dice2 = self.set_cheat_mode()
                 points = dice1 + dice2
                 players[current_player_index].score.set_current_score(points)
-
-            elif choice == "q":
+            elif choice == "q":  # quit game
                 self.quit_game()
-
-            elif choice == "s":
+            elif choice == "s":  # Switch name
                 new_name = input("What do you want to switch your name to? ")
                 players[current_player_index].change_name(new_name)
                 print(f"Name changed to {players[current_player_index]._get_name()}")
-
-            elif choice == "y":
+            elif choice == "y":  # Roll the dice
                 dice1, dice2 = self.throw_dice()
                 print(f"You rolled {dice1} and {dice2}.")
 
                 if dice1 == 1 or dice2 == 1:
                     print("You rolled a 1! Turn is over, no points earned.")
-                    players[current_player_index].score.reset_score_object()
+                    players[current_player_index].score.reset_score_object()    # Resets the players score
                     current_player_index = (current_player_index + 1) % len(players)  # Switches over to the other player
 
                 else:
                     points = dice1 + dice2
-                    players[current_player_index].score.set_current_score(points)
+                    players[current_player_index].score.set_current_score(points)   # Sets the score of the player
                     print(f"You earned {points} points this turn!")
-
-                    if players[current_player_index].score.get_current_score() + self.game_state.score_list.get(players[current_player_index], Score()).get_current_score() >= 100:
+                    '''
+                    If the player reaches over 100 points
+                    '''
+                    if players[current_player_index].score.get_current_score() >= 100:
                         print(f"\n{players[current_player_index]._get_name()} won the game!")
                         players[current_player_index].score.set_current_score(points) # Add the final points earned in the last round to the score
-                        self.game_state.score_list[players[current_player_index]] = players[current_player_index].score # Update the high score list
+                        self.game_state.score_list[players[current_player_index]] = players[current_player_index].score # Update the score list
                         self.print_score()
                         for player in players:
                             players[current_player_index].score.reset_score_object()    # Resets the score after the game
