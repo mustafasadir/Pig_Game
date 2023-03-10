@@ -1,6 +1,3 @@
-from Difficulty import Difficulty
-
-
 class GameState:
     '''
     Here the score list and cheat mode are being configured
