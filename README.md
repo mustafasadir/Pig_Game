@@ -11,3 +11,6 @@ How to get the code coverage:
 3.	Play through the game (to quit enter q)
 4.	Now run this line in the terminal: 	Coverage report -m   
 5.	The code coverage should now be visible in the terminal
+
+Missing part:
+The part that are missing in this project is the ability to play against the computer
