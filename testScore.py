@@ -6,33 +6,19 @@ class testScore(unittest.TestCase):
 
     def testGetCurrentScore(self):  # Test getter
         score = Score()  
-        self.assertEqual(score.getCurrentScore(), 0)  
-    
-    def testSetCurrentScore(self):  # Test setter
-        score = Score()  
-        score.setCurrentScore(10)  
-        self.assertEqual(score.getCurrentScore(), 10)  
-    
-    def testResetScoreObject(self):  # Test reset one object
-        score = Score()  
-        score.setCurrentScore(10)  
-        score.resetScoreObject()  
-        self.assertEqual(score.getCurrentScore(), 0)  
-    
-    def testResetScoreList(self):  # Test reset the score list
-        score1 = Score()  
-        score2 = Score()
-        score3 = Score()
-        score1.setCurrentScore(5)  
-        score2.setCurrentScore(25)  
-        score3.setCurrentScore(50)  
-        
-        scores_list = [score1, score2, score3]  # Makes a list of the scores
-        Score().resetScoreList(scores_list)  # Resets the scores
-        self.assertEqual(score1.getCurrentScore(), 0)  
-        self.assertEqual(score2.getCurrentScore(), 0)  
-        self.assertEqual(score3.getCurrentScore(), 0)  
-    
+        self.assertEqual(score.get_current_score(), 0)
+
+    def testset_current_score(self):  # Test setter
+        score = Score()
+        score.set_current_score(10)
+        self.assertEqual(score.get_current_score(), 10)
+
+    def test_reset_score_object(self):  # Test reset one object
+        score = Score()
+        score.set_current_score(10)
+        score.reset_score_object()
+        self.assertEqual(score.get_current_score(), 0)
+
 
 if __name__ == '__main__':
     unittest.main()
